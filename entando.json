@@ -1,0 +1,9 @@
+{
+    "microservices": [],
+    "microfrontends": [],
+    "svc": [],
+    "name": "bundle-template",
+    "version": "0.0.1",
+    "description": "bundle-template description",
+    "type": "bundle"
+}
