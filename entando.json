@@ -12,6 +12,18 @@
                 "en": "react-widget",
                 "it": "react-widget"
             }
+        },
+        {
+            "name": "vue-widget",
+            "customElement": "vue-widget",
+            "stack": "react",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "vue-widget",
+                "it": "vue-widget"
+            }
         }
     ],
     "svc": [
