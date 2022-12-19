@@ -55,14 +55,14 @@
 
         window.entando.keycloak
           .init({ onLoad: 'login-required' })
-          .success(onInit);
+          .then(onInit);
       }
     </script>
   </head>
   <body onLoad="initKeycloak();">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <react-material-mfe></react-material-mfe>
+    <react-widget></react-widget>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -74,15 +74,23 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      // function injectConfigIntoMfe() {
-      //   fetch('%PUBLIC_URL%/mfe-config.json').then(async response => {
-      //     const config = await response.text();
-      //     const rootComponet = document.querySelector('react-material-mfe');
-      //     rootComponet.setAttribute('config', config);
-      //   })
-      // }
+      function injectConfigIntoMfe() {
+        /**
+         * uncomment when api claim is ready
+         * 
+         * fetch('%PUBLIC_URL%/mfe-config.json').then(async response => {
+         *   const config = await response.text();
+         *   const rootComponet = document.querySelector('react-widget');
+         *   rootComponet.setAttribute('config', config);
+         * })
+        **/
+       
+        const rootComponet = document.querySelector('react-widget');
+        rootComponet.setAttribute('config', "{}");
+      }
 
-      // injectConfigIntoMfe()
+      injectConfigIntoMfe()
+      
     </script>
   </body>
 </html>
