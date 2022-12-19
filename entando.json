@@ -1,7 +1,22 @@
 {
     "microservices": [],
-    "microfrontends": [],
-    "svc": [],
+    "microfrontends": [
+        {
+            "name": "react-widget",
+            "customElement": "react-widget",
+            "stack": "react",
+            "type": "widget",
+            "group": "free",
+            "publicFolder": "public",
+            "titles": {
+                "en": "react-widget",
+                "it": "react-widget"
+            }
+        }
+    ],
+    "svc": [
+        "keycloak"
+    ],
     "name": "bundle-template",
     "version": "0.0.1",
     "description": "bundle-template description",
