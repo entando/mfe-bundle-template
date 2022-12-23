@@ -2,13 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { KeycloakProvider } from './auth/Keycloak';
-import { CacheProvider } from '@emotion/react' 
-import {
-    createTheme,
-    ThemeProvider
-} from "@mui/material/styles";
-import createCache from '@emotion/cache';
-  
+
+import styles from './index.css'
 
 export class ReactWidget extends HTMLElement {
   #rootID = 'app-element'
@@ -56,49 +51,16 @@ export class ReactWidget extends HTMLElement {
 
       this.cleanTree();
 
-      /*
-      * id you want to enable css injection uncomment this line
-      * styles.use({ target: this.shadowRoot });
-      */
+      styles.use({ target: this.shadowRoot });
 
       this.shadowRoot.appendChild(emotionStyleRoot);
 
-      const cache = createCache({
-        key: 'css',
-        prepend: true,
-        container: emotionStyleRoot,
-      });
-
       this.#appInstance = ReactDOM.createRoot(shadowRootElement);
-
-      const shadowTheme = createTheme({
-        components: {
-          MuiPopover: {
-            defaultProps: {
-              container: shadowRootElement
-            }
-          },
-          MuiPopper: {
-            defaultProps: {
-              container: shadowRootElement
-            }
-          },
-          MuiModal: {
-            defaultProps: {
-              container: shadowRootElement
-            }
-          }
-        }
-      });
 
       this.#appInstance.render(
         <React.StrictMode>
           <KeycloakProvider>
-            <CacheProvider value={cache}>
-              <ThemeProvider theme={shadowTheme}>
-                <App config={config} />
-              </ThemeProvider>
-            </CacheProvider>
+            <App config={config} />
           </KeycloakProvider>
         </React.StrictMode>
       );
