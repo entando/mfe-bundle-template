@@ -20,6 +20,9 @@
             "type": "widget",
             "group": "free",
             "publicFolder": "public",
+            "commands": {
+                "run": "npm run dev"
+            },
             "titles": {
                 "en": "vue-widget",
                 "it": "vue-widget"
