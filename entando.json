@@ -16,12 +16,16 @@
         {
             "name": "vue-widget",
             "customElement": "vue-widget",
-            "stack": "react",
+            "buildFolder": "dist",
+            "stack": "custom",
             "type": "widget",
             "group": "free",
             "publicFolder": "public",
+            "version": "0.0.1",
             "commands": {
-                "run": "npm run dev"
+                "run": "npm run dev",
+                "build": "npm run build",
+                "pack": "npm run build"
             },
             "titles": {
                 "en": "vue-widget",
@@ -31,7 +35,8 @@
         {
             "name": "angular-widget",
             "customElement": "angular-widget",
-            "stack": "react",
+            "stack": "angular",
+            "buildFolder": "dist",
             "type": "widget",
             "group": "free",
             "publicFolder": "public",
