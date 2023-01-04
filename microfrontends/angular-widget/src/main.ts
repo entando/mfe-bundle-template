@@ -1,6 +1,15 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { createCustomElement } from '@angular/elements';
+import { createApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
 
-import { AppModule } from './app/app.module';
+(async () => {
+  const app = await createApplication({
+    providers: []
+  });
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+  const element = createCustomElement(AppComponent, {
+    injector: app.injector,
+  });
+
+  customElements.define('angular-widget', element);
+})();
