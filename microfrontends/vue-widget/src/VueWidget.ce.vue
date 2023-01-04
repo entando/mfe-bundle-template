@@ -5,6 +5,7 @@ import Modal from "./components/Modal.vue";
 </script>
 
 <template>
+  <!-- NOTE: data-theme is for propagate the css variables theme through the shadow dom -->
   <div data-theme="light">
     <Container>
       <BasicTable />
