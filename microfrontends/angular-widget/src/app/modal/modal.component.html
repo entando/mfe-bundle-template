@@ -1,0 +1,11 @@
+<label for="my-modal" class="btn">{{ buttonText }}</label>
+<input type="checkbox" id="my-modal" class="modal-toggle" />
+<div class="modal">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">{{ title }}</h3>
+    <ng-content></ng-content>
+    <div class="modal-action">
+      <label for="my-modal" class="btn">{{ actionText }}</label>
+    </div>
+  </div>
+</div>
