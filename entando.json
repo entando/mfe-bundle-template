@@ -50,7 +50,7 @@
         "keycloak"
     ],
     "name": "bundle-template",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "bundle-template description",
     "type": "bundle"
 }

@@ -1,0 +1,2 @@
+<#assign wp=JspTaglibs["/aps-core"]>
+<script nonce="<@wp.cspNonce />" src="https://cdn.jsdelivr.net/npm/zone.js@0.12.0/bundles/zone.umd.min.js" integrity="sha256-doo3pSuAAjZxMW9/XJrVBWpYOri3XY8f3dCsT2pY5Eo=" crossorigin="anonymous"></script>
