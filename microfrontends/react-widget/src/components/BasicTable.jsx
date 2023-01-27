@@ -2,8 +2,8 @@ import * as React from 'react';
 
 export function BasicTable({ users }) {
   return (
-    <div class="overflow-x-auto mb-12">
-      <table class="table w-full">
+    <div className="overflow-x-auto mb-12">
+      <table className="table w-full">
         <thead>
           <tr>
             <th>Id</th>
