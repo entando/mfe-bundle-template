@@ -2,6 +2,6 @@ import * as React from 'react';
 
 export function Loading() {
   return (
-    <progress class="progress w-56"></progress>
+    <progress className="progress w-56"></progress>
   );
 }
