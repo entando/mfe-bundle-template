@@ -1,8 +1,6 @@
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, reactive } from 'vue';
 
-const state = Vue.observable({ instance: null });
-
-const instance = Vue.computed(() => state.instance);
+const instance = ref(null);
 
 function getKeycloakInstance() {
   return (window &&
@@ -14,12 +12,12 @@ function getKeycloakInstance() {
 }
 
 function refresh() {
-  state.instance = getKeycloakInstance();
+  instance.value = getKeycloakInstance();
 }
 
 export function useKeycloak() {
   onMounted(() => {
-    state.instance = getKeycloakInstance();
+    instance.value = getKeycloakInstance();
     window.addEventListener('keycloak', refresh);
   });
 

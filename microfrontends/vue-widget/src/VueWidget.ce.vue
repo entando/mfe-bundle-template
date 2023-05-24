@@ -5,22 +5,16 @@ import Modal from "./components/Modal.vue";
 
 import { useKeycloak } from "./keycloak";
 
-export default {
-  setup() {
-    const { instance } = useKeycloak();
-  }
-
-  return { keycloak: instance };
-}
+const { instance: keycloak } = useKeycloak();
 </script>
 
 <template>
   <!-- NOTE: data-theme is for propagate the css variables theme through the shadow dom -->
   <div data-theme="light">
     <Container>
-      <h1 v-if="keycloak.initialized">Keycloak is initialized!</h1>
+      <h1 v-if="keycloak && keycloak.initialized">Keycloak is initialized!</h1>
       <BasicTable />
-      <Modal />
+      <Modal /> 
     </Container>
   </div>
 </template>
